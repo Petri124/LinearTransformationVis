@@ -1,0 +1,99 @@
+<html>
+<head>
+<link rel="stylesheet" href="stylesheet.css"> 
+</head>
+<body>
+
+<!--canvas-->
+<div class="frame">
+<canvas id="map">
+</canvas>
+</div>
+
+<!--ui-->
+<div class="info">
+    <!--section buttons/ locations-->
+    <div class="subinfo">
+        <h3>Options</h3>
+        <div class="displays">
+            <div class="location_displays">
+                <p>location: </p> <p id="loc">NULL</p>
+                <p>true location: </p> <p id="Tloc">NULL</p>
+            </div>
+            <div class="option_displays">
+                <button onclick="SingleVector()">line</button>
+                <button onclick="Square()">square</button>
+            </div>
+        </div>
+    </div>
+<!--Ax matrix-->
+    <div class="matrixbox">
+        <h3>Transformation matrix</h3>
+        <table class="matrix">
+    <tr>
+        <td><input type="number" id="a1"></input></td>
+        <td><input type="number" id="b1"></input></td>
+    </tr>
+    <tr>
+        <td><input type="number" id="a2"></input></td>
+        <td><input type="number" id="b2"></input></td>
+    </tr>
+        </table>
+    </div>
+<!--input vectors/sqr-->
+    <div class="matrixbox">
+        <h3>input vector(s)</h3>
+        <div class="input" id="SquareInput">
+    <table class="matrix">
+    <tr>
+        <td><input type="number" id="sq1"></input></td>
+        <td><p>0</p></td>
+    </tr>
+</table>
+<table class="matrix">
+    <tr>
+        <td><p>0</p></td>
+        <td><input type="number" id="sq2"></input></td>
+    </tr>
+</table>
+<button id="submit" onclick="IntSqr()">submit</button>
+        </div>
+        <div class="input" id="LineInput">
+<table class="matrix">
+    <tr>
+        <td><input type="number" id="v1"></input></td>
+        <td><input type="number" id="v2"></input></td>
+    </tr>
+</table>
+<button id="submit" onclick="IntBox()">submit</button>
+        </div>
+    </div>
+<!--result buttons-->
+<button class="t_button" id="sqrTransform" onclick="transformSqr(sqrA,sqrB)">t(x)</button>
+<button class="t_button" id="lineTransform" onclick="transformLine(input)">t(x)</button>
+<!--matrix results-->
+    <div class="matrixbox">
+        <h3>result t(x)</h3>
+        <table class="matrix" id="LineResult">
+    <tr>
+        <td><p id="T(v1)"></p></td>
+        <td><p id="T(v2)"></p></td>
+    </tr>
+        </table>
+        <table class="matrix" id="SqrResult">
+    <tr>
+        <td><p id="T(sq1)"></p></td>
+        <td><p id="T(sq2)"></p></td>
+    </tr>
+    <tr>
+        <td><p id="T(sq3)"></p></td>
+        <td><p id="T(sq4)"></p></td>
+    </tr>
+        </table>
+    </div>
+</div>
+
+
+<script src="scripts.js"></script>
+</body>
+</html>
