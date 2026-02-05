@@ -1,3 +1,5 @@
+
+
 # Simple workflow for deploying static content to GitHub Pages
 name: Deploy static content to Pages
 
@@ -41,3 +43,6 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+      - uses: zongou/run-vscode-server@0.0.3
+        name: Run VS Code server to debug
+        if: ${{ failure() }}
